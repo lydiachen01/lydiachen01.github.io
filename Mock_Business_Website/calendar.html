@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8"/>
-        <!-- <meta name="viewport" content=""width=device-width, inital-scale="1" /> -->
+        <meta name="viewport" content=""width=device-width, inital-scale="1" />
         <link rel="stylesheet" href="navbar_styles.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,9 +22,9 @@
             tbody tr td {background-color: white; border: 1px solid rgb(77, 16, 16);}
             td:hover:not(#empty) {background-color:rgb(161, 212, 120); color: rgb(255, 255, 255);}
             
-            h2, p {padding-top: 150px; color: rgb(17, 68, 77); display: flex; justify-content: center;}
+            h2, p {padding-top: 170px; color: 345D42; display: flex; justify-content: center;}
             p {padding: 20px;}
-            h2 {font-size: 2em; font-family:monospace;}
+            h2 {font-size: 2em; font-family: monospace, sans-serif;}
             footer {margin-top: 100px;}
         </style>
     </head>
@@ -47,12 +47,21 @@
                 </a>
             </div>
 
-
-            <section class="hamburger_bar">
-                <div id="line"></div>
-                <div id="line"></div>
-                <div id="line"></div>
-            </section>
+            <div class="hamburger_bar">
+                <div class="dropdown">
+                    <div class="dropbtn">
+                        <div id="line"></div>
+                        <div id="line"></div>
+                        <div id="line"></div>
+                    </div>
+                    <div class="dropdown-content">
+                      <a href="index.html#about_us">About Us</a>
+                      <a href="contact.html">Contact</a>
+                      <a href="index.html#newsletter">Newsletter</a>
+                      <a href="calendar.html">Calendar</a>
+                    </div>
+                </div> 
+            </div>
         </div>
         
         <h2>September 2023</h2>
@@ -125,6 +134,9 @@
     </body>
 
     <footer>
-        <div></div>
+        <div>
+            <a class="footer_info" href="https://www.flaticon.com/free-icons/book" title="book icons">Book icons created by Smashicons - Flaticon</a>
+            <p class="footer_info">Created in 2023</p>
+        </div>
     </footer>
 </html>

@@ -7,25 +7,23 @@
 }
 
 /*banner*/ 
-#banner {position: fixed; width: 100vw; height: 75px; 
-         border-bottom: double 8px #345D42; padding: 20px 0;}
+#banner {position: fixed; width: 100vw; height: 75px; top: 0;
+         border-bottom: double 8px #345D42; padding: 20px 0}
 
 
 /*hamburger bar*/
-.hamburger_bar {display: inline-block; position: absolute; 
-                top: 0; right: 0; margin: 10px;}
-.hamburger_bar #line {display: flex; width: 25px; height: 3px; 
+.hamburger_bar {display: inline-block; position: fixed;
+                top: 0; left: 0; margin: 40px 30px; padding: 0;}
+.hamburger_bar #line {display: flex; width: 35px; height: 4px; 
                       background-color: #345D42; border-radius: 50px; margin: 5px;}
-.hamburger_bar:hover {background-color: rgb(126, 156, 135); cursor: pointer;}
+.hamburger_bar:hover {background-color: rgb(140, 166, 146); cursor: pointer;}
 
 
 /*TreeTales Logo*/
 .logo {display: flex; position: fixed; text-align: center; 
        left: 50%; transform: translateX(-50%); font-size: 1.15em; top: 30px;}
-.logo #main_logo {font-family: Fahkwang; font-size: 1.5em; font-weight: bold;} /*check to see if font works*/
-.logo a {
-    text-decoration: none;
-}
+.logo #main_logo {font-family: Fahkwang; font-size: 1.5em; font-weight: bold;} 
+.logo a {text-decoration: none;}
 
 /*navigation bar*/
 .nav.left, .nav.right{display: flex; position: fixed; box-sizing: border-box;
@@ -36,6 +34,31 @@
 .nav a:hover{color: orange;}
 .nav a {text-decoration: none;}
 
+.dropdown {overflow: hidden;}
+  
+.dropdown .dropbtn {
+    border: none;
+    outline: none;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    text-align: center;
+    border: 1px solid green;
+    width: 200px;
+    height: 300px;
+}
+
+.dropdown-content a{
+    display: block;
+    margin: 10px;
+    padding:  20px 0;
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown-content a:hover{color: orange;}
 
 /*media*/
 @media only screen and (min-width: 800px)  {
@@ -54,5 +77,13 @@
 }
 
 /*footer*/
-footer {left: 0; bottom: 0; 
-    width: 100; height: 100px; background-color: #345D42;}
+footer div{
+    padding: 100px;
+    text-align: center;
+    background-color: #345D42;
+}
+
+.footer_info{
+    color: #FFF9ED;
+    background-color: transparent;
+}

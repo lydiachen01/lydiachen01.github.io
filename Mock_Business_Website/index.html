@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8"/>
-        <!-- <meta name="viewport" content=""width=device-width, inital-scale="1" /> -->
+        <meta name="viewport" content="" width=device-width, inital-scale="1" />
         <link rel="stylesheet" href="styles.css" />
         <link rel="stylesheet" href="navbar_styles.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,7 +17,7 @@
                 <li id="contact"><a href="contact.html">Contact</a></li>
             </ul>
             <ul class="nav right">
-                <li><a href="#">Newsletter</a></li>
+                <li><a href="#newsletter">Newsletter</a></li>
                 <li id="calendar"><a href="calendar.html">Calendar</a></li>
             </ul>
             
@@ -28,11 +28,21 @@
                 </a>
             </div>
 
-            <section class="hamburger_bar">
-                <div id="line"></div>
-                <div id="line"></div>
-                <div id="line"></div>
-            </section>
+            <div class="hamburger_bar">
+                <div class="dropdown">
+                    <div class="dropbtn">
+                        <div id="line"></div>
+                        <div id="line"></div>
+                        <div id="line"></div>
+                    </div>
+                    <div class="dropdown-content">
+                      <a href="#about_us">About Us</a>
+                      <a href="contact.html">Contact</a>
+                      <a href="#newsletter">Newsletter</a>
+                      <a href="calendar.html">Calendar</a>
+                    </div>
+                </div> 
+            </div>
         </div>
 
         <div id="tree_img">
@@ -54,17 +64,23 @@
                 </div>
             </section>
 
-            <form id="newsletter">
-                <div id="sign_up_newsletter">Sign up to our newsletter</div>
-                <div id="email_parent"><input type="email" id="email" placeholder="example@gmail.com"/></div>
-                <div id="submit_parent">
-                    <input id="submit" type="submit" value="Join" method="POST"/>
-                </div>
-            </form>
+            <section id="newsletter">
+                <form>
+                    <div class="plant_icon"><img src="book.png"></div>
+                    <div id="sign_up_newsletter">Sign up to our newsletter! 🌱</div>
+                    <div id="email_parent"><input type="email" id="email" placeholder="example@gmail.com" required/></div>
+                    <div id="submit_parent">
+                        <input id="submit" type="submit" value="Join" method="POST"/>
+                    </div>
+                </form>
+            </section>
         </div>
-
-        <footer>
-            <div></div>
-        </footer>
     </body>
+    
+    <footer>
+        <div>
+            <a class="footer_info" href="https://www.flaticon.com/free-icons/book" title="book icons">Book icons created by Smashicons - Flaticon</a>
+            <p class="footer_info">Created in 2023</p>
+        </div>
+    </footer>
 </html>
