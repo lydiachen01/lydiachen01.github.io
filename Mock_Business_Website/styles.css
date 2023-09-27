@@ -7,7 +7,7 @@
 }
 
 /*banner*/ 
-#banner {position: fixed; width: 100vw; height: 50vh; 
+#banner {position: fixed; width: 100vw; height: 100vh; 
          border-bottom: double 8px #345D42; padding: 20px 0;}
 
 
@@ -21,7 +21,7 @@
 
 /*TreeTales Logo*/
 .logo {display: inline-block; position: fixed; text-align: center; 
-       left: 50%; transform: translateX(-50%);}
+       left: 50%; transform: translateX(-50%); font-size: 1.15em;}
 .logo #main_logo {font-family: Fahkwang; font-size: 1.5em; font-weight: bold;} /*check to see if font works*/
 .logo a {
     text-decoration: none;
@@ -34,7 +34,7 @@
             list-style-type: none;}
 .nav li {display: inline-block; padding: 15px 30px; text-align: center; margin-top: 20px; width: 10vw;}
 .nav a:hover{color: orange;}
-.nav a {text-decoration: none;}
+.nav a {text-decoration: none; font-size: 2vh;}
 
 
 /*rest of the page*/
