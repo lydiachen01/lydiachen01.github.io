@@ -1,0 +1,118 @@
+* {
+    color: #345D42;
+    margin: 0;
+    padding: 0;
+    font-family: "Karla", Tahoma, sans-serif;
+    background-color: #FFF9ED;
+}
+
+/*banner THINK ABOUT WHETHER I SHOULD MAKE THE BANNER ITS OWN SEPARATE FILE *IMPORTANT* */ 
+#banner {position: fixed; width: 100vw; height: 50px; 
+         border-bottom: double 8px #345D42; padding: 20px 0;}
+
+
+/*hamburger bar*/
+.hamburger_bar {display: inline-block; position: absolute; 
+                top: 0; right: 0; margin: 10px;}
+.hamburger_bar #line {display: flex; width: 25px; height: 3px; 
+                      background-color: #345D42; border-radius: 50px; margin: 5px;}
+.hamburger_bar:hover {background-color: rgb(19, 87, 40);}
+
+
+/*TreeTales Logo*/
+.logo {display: inline-block; position: fixed; text-align: center; 
+       left: 50%; transform: translateX(-50%);}
+.logo #main_logo {font-family: Fahkwang; font-size: 1.5em; font-weight: bold;} /*check to see if font works*/
+.logo a {
+    text-decoration: none;
+}
+
+/*navigation bar*/
+.nav.left{display: flex; position: fixed; top: 0; left: 0; box-sizing: border-box;
+          list-style-type: none;}
+.nav.right {display: flex; position: fixed; top: 0; right: 0; box-sizing: border-box;
+            list-style-type: none;}
+.nav li {display: inline-block; padding: 15px 30px; margin-top: 20px;}
+.nav a:hover{color: orange;}
+.nav a {text-decoration: none;}
+
+
+/*rest of the page*/
+.rest_of_page {
+    padding: 0 50px;
+    margin: 0 auto;
+    line-height: 2;
+    max-width: 800px;
+    /* border: 1px solid black; */
+}
+
+#tree_img{
+    display: flex;
+    width:100%;
+    padding-top: 80px;
+    border-bottom: 10px double #345D42;
+    overflow-x: hidden;
+}
+
+section {
+    margin: 50px 0;
+    /* border: 1px solid black; */
+}
+
+#newsletter {
+    border-top: 5px double #345D42;
+    padding: 50px 0;
+}
+
+#sign_up_newsletter {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    /* border: 1px solid black; */
+    width: 50vw;
+    margin: 0 auto;
+}
+
+#submit_parent, #email_parent {
+    display: flex;
+    justify-content: center;
+}
+
+#email {
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #D9D9D9;
+    padding: 0 10px;
+    height: 30px;
+    width: 300px;
+}
+
+#submit {
+    background-color: #45a049; 
+    color: white;
+    border: none; 
+    border-radius: 25px;
+    padding: 15px 60px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    justify-content: center;
+    cursor: pointer; 
+}
+
+#submit:hover {background-color: #8dd666; color: white;}
+
+/*media*/
+@media only screen and (min-width: 600px)  {
+    .hamburger_bar {display: none;}
+}
+
+@media only screen and (max-width: 600px) {
+    .nav.left{display: none;}
+    .nav.right{display: none;}
+}
+
+/*footer*/
+footer {left: 0; bottom: 0; 
+        width: 100; height: 100px; background-color: #345D42;}
