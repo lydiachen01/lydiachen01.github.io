@@ -4,6 +4,7 @@
     padding: 0;
     font-family: "Karla", Tahoma, sans-serif;
     background-color: #FFF9ED;
+    font-size: 20px;
 }
 
 /*banner*/ 
@@ -16,7 +17,7 @@
                 top: 0; right: 0; margin: 10px;}
 .hamburger_bar #line {display: flex; width: 25px; height: 3px; 
                       background-color: #345D42; border-radius: 50px; margin: 5px;}
-.hamburger_bar:hover {background-color: rgb(19, 87, 40);}
+.hamburger_bar:hover {background-color: rgb(126, 156, 135);}
 
 
 /*TreeTales Logo*/
