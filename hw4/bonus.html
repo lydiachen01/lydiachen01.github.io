@@ -165,10 +165,10 @@
                 discount = roundValue(totalAmount * .1);
                 totalAmount -= discount;
 
-                document.getElementById("discount").innerHTML = "Discount: -$" + discount;
+                document.getElementById("discount").innerHTML = "Discount: -$" + roundValue(discount);
                 document.getElementById("subtotal-after").innerHTML = "Subtotal (After Discount): $" + roundValue(totalAmount);
             } else {
-                document.getElementById("subtotal-before").innerHTML = "Subtotal: $" + totalAmount;
+                document.getElementById("subtotal-before").innerHTML = "Subtotal: $" + roundValue(totalAmount);
             }
             
             tax = roundValue(totalAmount * 0.0625);
