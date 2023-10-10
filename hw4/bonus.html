@@ -155,7 +155,7 @@
 
             var totalAmount = 0;
             for (let item in menu){
-                quantity[item] = prompt("How many " + item + " do you want?", "0");
+                quantity[item] = prompt("How many " + item + " do you want?", "1");
                 document.getElementById(item).innerHTML = quantity[item] + " " + item + ": $" + roundValue(quantity[item]*menu[item]);
                 totalAmount += quantity[item]*menu[item];
             }
