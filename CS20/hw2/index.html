@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="" width=device-width, inital-scale="1" />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="navbar_styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200;300&display=swap" rel="stylesheet" />
+        <title>TreeTales 🌱: Your Neighborhood Literary Grove</title>
+    </head>
+    <body>
+        <div id="banner">
+            <ul class="nav left">
+                <li><a href="#about_us">About Us</a></li>
+                <li id="contact"><a href="contact.html">Contact</a></li>
+            </ul>
+            <ul class="nav right">
+                <li><a href="#newsletter">Newsletter</a></li>
+                <li id="calendar"><a href="calendar.html">Calendar</a></li>
+            </ul>
+            
+            <div class="logo">
+                <a href="index.html">
+                    <div id="main_logo">TreeTales</div>
+                    <div>A Literary Grove</div>
+                </a>
+            </div>
+
+            <div class="hamburger_bar">
+                <div class="dropdown">
+                    <div class="dropbtn">
+                        <div id="line"></div>
+                        <div id="line"></div>
+                        <div id="line"></div>
+                    </div>
+                    <div class="dropdown-content">
+                      <a href="#about_us">About Us</a>
+                      <a href="contact.html">Contact</a>
+                      <a href="#newsletter">Newsletter</a>
+                      <a href="calendar.html">Calendar</a>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+        <div id="tree_img">
+            <img width="100%" title="Source: Unsplash" src="tree_banner_background.webp">
+        </div>
+        
+        <div class="rest_of_page">
+            <section id="about_us" method="POST" action="#">
+                <h2>ABOUT US</h2>
+                <div> Welcome to TreeTales Literary Grove, where we nurture a love for literature amidst the beauty of nature. Our community is built upon a shared passion for books and the serene embrace of the natural world.
+                    <br/><br/>
+                    At TreeTales, we believe that the best stories are often found when we explore the depths of a good book while surrounded by the tranquility of trees, the whispering of leaves, and the symphony of birdsong. We've created this haven for book enthusiasts who yearn to connect with both the written word and the world around them.
+                    <br/><br/>
+                    Our mission is to foster a sense of belonging and intellectual growth within our community. Through regular book selections and discussions, we encourage members to expand their literary horizons and engage in thoughtful dialogues that transcend the pages of a book. We celebrate the diversity of genres and perspectives, ensuring that there's something for every reader in our grove.
+                    <br/><br/>
+                    Whether you're an avid reader, a casual book lover, or simply someone seeking the solace of nature intertwined with captivating stories, TreeTales Literary Grove is your sanctuary. Join us as we turn the pages of great books and embark on a journey of literary exploration beneath the shade of our beloved trees.
+                    <br/><br/>
+                    Come, find your place among the branches of our community, and let the stories we share inspire your own tale within the evergreen embrace of TreeTales Literary Grove.
+                </div>
+            </section>
+
+            <section id="newsletter">
+                <form action="#">
+                    <div class="plant_icon"><img src="book.png"></div>
+                    <div id="sign_up_newsletter">Sign up to our newsletter! 🌱</div>
+                    <div id="email_parent"><input type="email" id="email" placeholder="example@gmail.com" required/></div>
+                    <div id="submit_parent">
+                        <input id="submit" type="submit" value="Join" method="POST"/>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </body>
+    
+    <footer>
+        <div>
+            <a class="footer_info" href="https://www.flaticon.com/free-icons/book" title="book icons">Book icons created by Smashicons - Flaticon</a>
+            <p class="footer_info">Created by: Lydia [2023] </p>
+        </div>
+    </footer>
+</html>

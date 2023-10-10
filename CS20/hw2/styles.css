@@ -1,0 +1,83 @@
+* {
+    color: #345D42;
+    margin: 0;
+    padding: 0;
+    font-family: "Karla", Tahoma, sans-serif;
+    background-color: #FFF9ED;
+}
+
+h2 {font-size: 32px;}
+
+/*rest of the page*/
+.rest_of_page {
+    padding: 0 50px;
+    margin: 0 auto;
+    line-height: 2;
+    max-width: 800px;
+}
+
+#tree_img{
+    display: flex;
+    width:100%;
+    max-height: 800px;
+    padding-top: 80px;
+    border-bottom: 10px double #345D42;
+    overflow-x: hidden;
+}
+
+section {
+    padding-top: 150px;
+    margin-bottom: 50px;
+}
+
+#newsletter {
+    border-top: 5px double #345D42;
+}
+
+#sign_up_newsletter {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 0 auto;
+}
+
+#submit_parent, #email_parent {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+
+.plant_icon {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.plant_icon img {
+    max-width: 80%;;
+}
+
+#email {
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    background-color: #ccc;
+    height: 30px;
+    width: 300px;
+    max-width: 500px; 
+    margin: 0 auto; 
+    padding: 10px 20px;
+}
+
+#submit {
+    background-color: #45a049; 
+    color: white;
+    border: none; 
+    border-radius: 25px;
+    padding: 15px 60px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    justify-content: center;
+    cursor: pointer; 
+}
+
+#submit:hover {background-color: #8dd666; color: white;}
