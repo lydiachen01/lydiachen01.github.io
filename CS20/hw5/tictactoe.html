@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" 
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" 
+    crossorigin="anonymous"></script>
+    
+    <title>TicTacToe</title>
+    <script>
+        function winningCondition (playerType){
+            for(i=0; i < 9; i+=3){
+                if (childElements[i].innerHTML == playerType && childElements[i+1].innerHTML == playerType && childElements[i+2].innerHTML == playerType){
+                    document.getElementById("output_message").innerHTML = "Congrats! Player " + playerType + " won!";
+                    gameOver = true;
+                    return;
+                }
+            }
+
+            for(i=0; i < 3; i++){
+                if (childElements[i].innerHTML == playerType && childElements[i+3].innerHTML == playerType && childElements[i+6].innerHTML == playerType){
+                    document.getElementById("output_message").innerHTML = "Congrats! Player " + playerType + " won!";
+                    gameOver = true;
+                    return;
+                }
+            }
+
+            if (childElements[2].innerHTML == playerType && childElements[4].innerHTML == playerType && childElements[6].innerHTML == playerType){
+                document.getElementById("output_message").innerHTML = "Congrats! Player " + playerType + " won!";
+                gameOver = true;
+                return;
+            }
+            
+            if (childElements[0].innerHTML == playerType && childElements[4].innerHTML == playerType && childElements[8].innerHTML == playerType){
+                document.getElementById("output_message").innerHTML = "Congrats! Player " + playerType + " won!";
+                gameOver = true;
+                return;
+            } 
+            
+            var fullGrid = true;
+            for(i=0; i < 9; i++){
+                if (childElements[i].innerHTML == ""){
+                    fullGrid = false;
+                }
+            }
+
+            if (fullGrid) {
+                document.getElementById("output_message").innerHTML = "It's a tie! Try again!";
+                gameOver = true;
+            }  
+        }
+
+        $(document).ready(function(){
+            $(".block").click(
+                function(){
+                    if (gameOver) {
+                        return;
+                    }
+
+                    var playerMove = "O";
+                    if ($(this).is(":empty")) {
+                        playerX ? (playerMove = "X", playerX = false) : (playerX = true);
+                        $(this).html(playerMove);
+
+                    } else { 
+                        alert("This cell has already been taken!");
+                    }
+
+                    playerX ? (document.getElementById("player_turn").innerHTML = "Player X's Turn") : (document.getElementById("player_turn").innerHTML = "Player O's Turn");
+                    winningCondition(playerMove);        
+                }
+            )
+
+            $("#reset_button").click(function(){
+                numBlockClicked = 0;
+                $(".block").each(function(){
+                    $(this).html(""); 
+                    document.getElementById("output_message").innerHTML = "";
+                    gameOver = false;
+                })
+                $(".block").on("click");
+            })
+        })
+    </script>
+
+    <style>
+        *{
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        h2 {
+            font-size: 50px;
+        }
+
+        #player_turn {
+            display: inline-block;
+            font-size: 18px;
+            background-color: lightgray;
+            border: 1px solid black;
+            border-radius: 25px;
+            padding: 10px 20px;
+        }
+
+        #grid {
+            margin: 0 auto;
+            margin-top: 5vh;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            max-width: 800px;
+            height: 500px;
+            width: 500px;
+        }
+
+        #grid div {
+            border: 1px solid rgb(44, 44, 55);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+        }
+
+        #grid div:hover {
+            background-color: lightblue;
+        }
+
+        #output_message {
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            margin-top: 40px;
+            font-size: 28px;
+            z-index: 1;
+        }
+
+        #reset_button {
+            display: block;
+            font-size: 18px;
+            margin: 0 auto;
+            margin-top: 80px;
+            padding: 10px 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Tic Tac Toe</h2>
+    <div id="temp"></div>
+    <div id="player"></div>
+    <div id="player_turn"></div>
+    <div id="grid"></div>
+    <div id="output_message"></div>
+    <button id="reset_button">Reset game</button>
+
+    <script>
+        var playerX = true;
+        var gameOver = false;
+        var grid = document.getElementById("grid");
+        for (i = 0; i < 9; i++){
+            var cell = document.createElement("div");
+            cell.className = "block";
+            grid.appendChild(cell);
+        }
+
+        var childElements = grid.children;
+        playerX ? (document.getElementById("player_turn").innerHTML = "Player X's Turn") : (document.getElementById("player_turn").innerHTML = "Player O's Turn");
+    </script>
+</body>
+</html>
