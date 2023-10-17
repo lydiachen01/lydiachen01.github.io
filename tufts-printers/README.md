@@ -7,4 +7,5 @@ Objective: Create an interactive map, using the Google API, that shows the gener
 Current Software: Google API, HTML/CSS, Javascript, JSON, REACT
 
 Start Date: October 15, 2023
+
 End Date: TBD
