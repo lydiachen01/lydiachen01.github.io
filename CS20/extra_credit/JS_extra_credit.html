@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Extra Credit</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" 
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" 
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#jump").click(
+                function(){
+                    // debug this
+                    if (moveRight){
+                        $("#jump").text("JUMP >");
+                        document.getElementById("left_text").value = document.getElementById("right_text").value;
+                        document.getElementById("right_text").value = "";
+                        moveRight = false;
+                    } else {
+                        $("#jump").text("< JUMP");
+                        document.getElementById("right_text").value = document.getElementById("left_text").value;
+                        document.getElementById("left_text").value = "";
+                        moveRight = true;
+                    }
+                }
+            )
+
+            $("#check_all").click(
+                function(){
+                    let box = document.getElementsByName("box");
+                    if (checkAll){
+                        for (i=1; i<5; i++){
+                            box[i].checked = false;
+                        }
+                        checkAll = false;
+                        $("#check_all_label").text("Check All");
+                    } else {
+                        for (i=1; i<5; i++){
+                            box[i].checked = true;
+                        }
+                        checkAll = true;
+                        $("#check_all_label").text("Uncheck All");
+                    }
+                }
+            )
+        })
+    </script>
+
+    <style>
+        form {
+            display: flex;
+            text-align: center;
+            justify-content: space-between;
+            max-width: 700px;
+            margin: 50px 0 0 50px;
+        }
+
+        h2 {
+            display: inline-block;
+            margin: 50px 0 0 50px;
+            font-size: 32px;
+            font-weight: 500;
+        }
+
+        input {
+            padding: 20px;
+        }
+
+        #jump {
+            display: block;
+            border: #ff9e43 1px solid;
+            background-color: #ff9e43;
+            border-radius: 5px;
+            padding: 0 40px;
+        }
+
+        #jump:hover {
+            border: 1px rgb(255, 213, 98) solid;
+            background: rgb(255, 213, 98);
+            cursor: pointer;
+        }
+
+        #left_block{
+            margin-right: 20px;
+        }
+
+        #right_block{
+            margin-left: 20px;
+        }
+
+        #page input {
+            border: #ff9e43 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <h2>Part 1</h2>
+    <form action="">
+        <div id="left_block"><input id="left_text" type="text"/></div>
+        <div id="jump" style="padding: 20px;">JUMP ></div>
+        <div id="right_block"><input id="right_text" type="text"/></div>
+    </form>
+
+    <h2>Part 2</h2>
+    <div id="page" style="border: 1px black solid; max-width: 200px; margin: 50px;">
+        <input type="checkbox" id="check_all" name="box" value="Check All"><label id="check_all_label" for="check_all">Check All</label><br><br>
+        <input type="checkbox" id="first" name="box" value="first">first<br>
+        <input type="checkbox" id="second" name="box" value="second">second<br>
+        <input type="checkbox" id="third" name="box" value="third">third<br>
+        <input type="checkbox" id="fourth" name="box" value="fourth">fourth<br>
+    </div>
+    <script>
+        let moveRight = false;
+        let checkAll = false;
+    </script>
+</body>
+</html>
