@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $.get("products.json", function (data) {
+            let products = data.products;
+        
+            products.forEach(function (product) {
+                let labels = product.categories.join(", ");
+
+                let name = document.createElement("div");
+                let description = document.createElement("div");
+                let price = document.createElement("div");;
+                let categories = document.createElement("div");; 
+
+                name.style.fontWeight = "bold";                
+                name.innerHTML = product.name + "<br>"
+                description.innerHTML = product.description + "<br>"
+                price.innerHTML = "Price: $" + product.price + "<br>"
+                categories.innerHTML = "Categories: " + labels + "<br><br>";
+        
+                document.getElementById(product.id).appendChild(name);
+                document.getElementById(product.id).appendChild(description);
+                document.getElementById(product.id).appendChild(price);
+                document.getElementById(product.id).appendChild(categories);
+            });
+        });
+    </script>
+    <style>
+        .product {
+            margin: 1em;
+            padding: 2em;
+            max-width: 500px;
+            font-family: 'Courier New', Courier, monospace;
+            border: 1px solid rgb(0, 0, 0);
+            background-color: rgb(142, 196, 178);
+        }
+    </style>
+</head>
+<body>
+    <div class="part2">
+        <div id="1" class="product"></div>
+        <div id="2" class="product"></div>
+        <div id="3" class="product"></div>
+        <div id="4" class="product"></div>
+        <div id="5" class="product"></div>
+        <div id="6" class="product"></div>
+        <div id="7" class="product"></div>
+        <div id="8" class="product"></div>
+        <div id="9" class="product"></div>
+        <div id="10" class="product"></div>
+        <div id="11" class="product"></div>
+        <div id="12" class="product"></div>
+    </div>
+</body>
+</html>

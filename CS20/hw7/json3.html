@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            let productList = [];
+        
+            $.get("products.json", function(data){
+                productList = data.products;
+        
+                productList.forEach(function(product){
+                    let labels = product.categories;
+                    labels.forEach(function(category){                
+                        if(!$("#categoryList:contains('" + category + "')").length){
+                            let categoryOption = document.createElement("option");
+                            categoryOption.innerHTML = category;
+                            document.getElementById("categoryList").appendChild(categoryOption);
+                        }
+                    })
+                })
+            })
+
+            let nameObj = document.createElement("div");
+            
+            $("#filter").click(function(){
+                nameObj.innerHTML = "";
+            
+                var selectedOption = $("#categoryList option:selected").val();
+                var filteredProducts = productList.filter(function(product){
+                    return product.categories.includes(selectedOption);
+                })
+            
+                filteredProducts.forEach(function(product){
+                    nameObj.classList.add("name");
+                    nameObj.innerHTML += "<li>" + product.name + "</li>";
+                })
+                document.getElementById("same_category").appendChild(nameObj);
+            })            
+        })
+    </script>
+    <style>
+        .name {
+            margin-left: 1em;
+        }
+
+        #filter {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Product List</h2>
+    <form>
+        Select a category: <select id ="categoryList"></select>
+    </form>
+    <button id="filter">Filter</button>
+    <div id="same_category"></div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part 1</title>
+</head>
+<body>
+    <div id="part1"></div>
+    <script>
+        let obj = {
+            "products": [
+              {
+                "id": 1,
+                "name": "Laptop",
+                "description": "High-performance laptop with the latest processor and graphics",
+                "price": 999.99,
+                "categories": ["Electronics", "Computers"]
+              },
+              {
+                "id": 2,
+                "name": "Smartphone",
+                "description": "5G smartphone with a high-resolution camera",
+                "price": 699.99,
+                "categories": ["Electronics", "Mobile Devices"]
+              },
+              {
+                "id": 3,
+                "name": "Running Shoes",
+                "description": "Comfortable and lightweight running shoes for athletes",
+                "price": 79.99,
+                "categories": ["Fashion", "Sports"]
+              },
+              {
+                "id": 4,
+                "name": "Coffee Maker",
+                "description": "Programmable coffee maker with a built-in grinder",
+                "price": 149.99,
+                "categories": ["Appliances", "Kitchen"]
+              },
+              {
+                "id": 5,
+                "name": "Bookshelf",
+                "description": "Sturdy wooden bookshelf with multiple shelves",
+                "price": 129.99,
+                "categories": ["Furniture", "Home Decor"]
+              },
+              {
+                "id": 6,
+                "name": "Fitness Tracker",
+                "description": "Waterproof fitness tracker with heart rate monitoring",
+                "price": 49.99,
+                "categories": ["Electronics", "Sports"]
+              },
+              {
+                "id": 7,
+                "name": "Digital Camera",
+                "description": "High-quality digital camera for photography enthusiasts",
+                "price": 399.99,
+                "categories": ["Electronics", "Photography"]
+              },
+              {
+                "id": 8,
+                "name": "Tennis Racket",
+                "description": "Professional-grade tennis racket for advanced players",
+                "price": 129.99,
+                "categories": ["Sports"]
+              },
+              {
+                "id": 9,
+                "name": "Toaster",
+                "description": "2-slice toaster with adjustable browning settings",
+                "price": 29.99,
+                "categories": ["Appliances", "Kitchen"]
+              },
+              {
+                "id": 10,
+                "name": "Hiking Backpack",
+                "description": "Durable hiking backpack with multiple compartments",
+                "price": 69.99,
+                "categories": ["Outdoor", "Travel"]
+              },
+              {
+                "id": 11,
+                "name": "Wireless Headphones",
+                "description": "Noise-canceling wireless headphones with long battery life",
+                "price": 149.99,
+                "categories": ["Electronics", "Audio"]
+              },
+              {
+                "id": 12,
+                "name": "Gaming Console",
+                "description": "High-end gaming console for immersive gaming experiences",
+                "price": 399.99,
+                "categories": ["Electronics", "Gaming"]
+              }
+            ]
+        }
+        let myObject = JSON.stringify(obj);
+        document.getElementById("part1").innerHTML = myObject;
+    </script>
+</body>
+</html>
