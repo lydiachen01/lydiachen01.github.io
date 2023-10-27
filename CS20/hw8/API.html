@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Fun</title>
+    <style>
+        * {
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            box-sizing: border-box;
+        }
+
+        #click_here {
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        #click_here:hover {
+            text-decoration-line: underline;
+        }
+
+        #grandmaster {
+            text-align: center;
+            color: white;
+            display: inline-block;
+            border-radius: 25px;
+            background-color: rgb(79, 95, 107);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        body div {
+            margin-bottom: 1em;
+        }
+
+        .avatar {
+            width: 380px;
+            height: 380px;
+            border-radius: 25px; 
+            border: 8px solid rgb(44, 57, 62);
+        }
+
+        .name {
+            margin: 1em auto;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .league {
+            padding-bottom: 2em;
+        }
+        
+        a:hover {
+            color: darkorange;
+        }
+
+    </style>
+    <script>
+        function getProfile(){
+            let ajaxRequest = new XMLHttpRequest();
+
+            ajaxRequest.open("GET", "https://api.chess.com/pub/player/hikaru");
+            ajaxRequest.send();
+
+            ajaxRequest.onreadystatechange = function(){
+                if(document.getElementById("grandmaster").innerHTML.length == 0){
+                    if (ajaxRequest.readyState == 4) { 
+                        if (ajaxRequest.status == 200) {
+                            let data = JSON.parse(ajaxRequest.responseText); //JSON object
+                            let profileLink = "";
+
+                            for (key in data) {
+                                if (key == "avatar") {
+                                    let newInfo = document.createElement("img");
+                                    newInfo.classList.add(key);
+                                    newInfo.src = data[key];
+                                    document.getElementById("grandmaster").appendChild(newInfo);
+    
+                                } else if (key != "@id" && key != "url" && key != "player_id" 
+                                            && key != "joined" && key != "last_online" 
+                                            && key != "country" && key != "status" 
+                                            && key != "is_streamer" && key != "verified" ){
+                                    let newInfo = document.createElement("div");
+                                    newInfo.classList.add(key);
+
+                                    if (key == "name") {
+                                        let linkTag = document.createElement("a");
+                                        linkTag.href = profileLink;
+                                        newInfo.appendChild(linkTag);
+                                        linkTag.innerHTML = data[key];
+                                    } else if (key == "twitch_url"){
+                                        let linkTag = document.createElement("a");
+                                        linkTag.href = data[key];
+                                        newInfo.appendChild(linkTag);
+                                        linkTag.innerHTML = data[key];
+                                    } else {
+                                        newInfo.innerHTML = key[0].toUpperCase() + key.substr(1, key.length) + ": " + data[key];
+                                    }
+                                    document.getElementById("grandmaster").appendChild(newInfo);
+                                }
+
+                                if (key == "url") {
+                                    profileLink = data[key];
+                                }
+                            } 
+
+                        } else {
+                            console.log("Status error: " + ajaxRequest.status);
+                        }
+                    } else {
+                        console.log("Ignored readyState: " + ajaxRequest.readyState);
+                    }
+                }
+            }
+        }
+
+        getProfile();
+    </script>
+</head>
+<body>
+    <div id="grandmaster"></div>
+    <div id="content" style="text-align: left; max-width: 800px;">
+        <p>
+            I selected the Chess.com read-only REST API. 
+            The endpoint that I selected displays the profile information when given some player’s username. 
+            (In this case, I specifically chose the GM Hikaru Nakamura.) I chose to display only certain information.
+        </p>
+
+        <p>
+            <b>API Source Citation: </b><a class="link" href="https://free-apis.github.io/#/categories/Games%20&%20Comics">Games & Comics - Free APIs</a>
+        </p>
+        
+        <p>
+            <b>Chess API documentation: </b><a class="link" href="https://www.chess.com/news/view/published-data-api">Published-Data API - Chess.com</a>
+        </p>
+
+        <p>
+            The parameter I used for the API request is the username of the player profile data that I want from the Chess.com website.
+            In this case, the parameter would be “hikaru”.
+        </p>
+
+        <b>Two real-life applications:</b>
+        <ul>
+            <li>List your own chess.com profile and information on your personal website</li>
+            <li>Create a web page that displays the current stats of the top 30 chess grandmasters in the world</li>
+            <ul>
+                <li>This would require another endpoint (the one that contains a list of all grandmasters’ usernames)</li>
+            </ul>
+        </ul>
+    </div>
+</body>
+</html>
