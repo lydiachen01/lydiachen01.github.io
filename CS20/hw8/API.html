@@ -59,6 +59,7 @@
     </style>
     <script>
         function getProfile(){
+            // used HttpRequest to fetch data from Chess.com Read-only API using GET method
             let ajaxRequest = new XMLHttpRequest();
 
             ajaxRequest.open("GET", "https://api.chess.com/pub/player/hikaru");
@@ -78,7 +79,7 @@
                                     newInfo.src = data[key];
                                     document.getElementById("grandmaster").appendChild(newInfo);
     
-                                } else if (key != "@id" && key != "url" && key != "player_id" 
+                                } else if (key != "@id" && key != "url" && key != "player_id"   // exclude certain data
                                             && key != "joined" && key != "last_online" 
                                             && key != "country" && key != "status" 
                                             && key != "is_streamer" && key != "verified" ){
@@ -90,11 +91,13 @@
                                         linkTag.href = profileLink;
                                         newInfo.appendChild(linkTag);
                                         linkTag.innerHTML = data[key];
+
                                     } else if (key == "twitch_url"){
                                         let linkTag = document.createElement("a");
                                         linkTag.href = data[key];
                                         newInfo.appendChild(linkTag);
                                         linkTag.innerHTML = data[key];
+
                                     } else {
                                         newInfo.innerHTML = key[0].toUpperCase() + key.substr(1, key.length) + ": " + data[key];
                                     }
@@ -107,7 +110,7 @@
                             } 
 
                         } else {
-                            console.log("Status error: " + ajaxRequest.status);
+                            console.log("Status error: " + ajaxRequest.status);     // catch error
                         }
                     } else {
                         console.log("Ignored readyState: " + ajaxRequest.readyState);
