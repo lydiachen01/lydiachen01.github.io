@@ -11,11 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <!-- Bootstrap 5.3.1 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Bootstrap CDN -->
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,278 +20,203 @@
         href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,100&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&display=swap"
         rel="stylesheet">
 
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous">
+        </script>
+
+    <script src="jquery.js"></script>
     <link rel="stylesheet" href="styles.css">
-    <title>Tea Leaves: Homepage 🍵</title>
-    <style>
-        *{
-            box-sizing: border-box;
-        }
-        
-        section {
-            padding-top: 50px;
-            z-index: 1;
-        }
+    <title>Teatopia: Homepage 🍵</title>
 
-        .w-100 {
-            width: 50% !important;
-            margin: 0 auto;
-        }
-
-        .card {
-            border-radius: 80px;
-            margin-bottom: 2em;
-            margin: 0 auto 2em auto;
-        }
-
-        #contact_us_button {
-            background-color: #416843;
-            border-color: transparent;
-            color: white;
-        }
-
-        #contact_us_button:hover {
-            background-color: #4e8d6b;
-        }
-
-        .carousel-control-prev, .carousel-control-next { 
-            z-index: 0;
-        }
-
-        .carousel-caption {
-            background-color: #38463979;
-        }
-        
-        p {
-            padding-left: 10%;
-            padding-right: 10%;
-        }
-
-    </style>
-
-    <script>
-        $(document).ready(function () {
-            const closeIcon = document.querySelector(".closeIcon");
-            const menuIcon = document.querySelector(".menuIcon");
-            const menu = document.querySelector(".menu")
-
-            $("#hamburger_menu").click(function () {
-                if (menu.classList.contains("showMenu")) {
-                    menu.classList.remove("showMenu");
-                    closeIcon.style.display = "none";
-                    menuIcon.style.display = "block";
-                } else {
-                    menu.classList.add("showMenu");
-                    closeIcon.style.display = "block";
-                    closeIcon.style.color = "white";
-                    menuIcon.style.display = "none";
-                }
-            })
-        })
-    </script>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <div class="navbar">
-        <ul class="menu">
-            <li><a class="item" href="catalog.html">Catalog</a></li>
-            <li><a class="item" href="benefits_of_tea.html">Benefits Of Tea</a></li>
-            <li><a class="item" href="contacts.html">Contact</a></li>
-            <li><a class="item" href="location.html">Find Us</a></li>
-        </ul>
+    <!-- Header -->
+    <div id="header"></div>
+    <script>
+        $(function () {
+            $("#header").load("navbar.php");
+            $("#footer").load("footer.html");
+            $(".landing-text").addClass("fade-in");
+        });
 
-        <button id="hamburger_menu">
-            <i class="menuIcon material-icons">menu</i>
-            <i class="closeIcon material-icons">close</i>
-        </button>
-
-        <!-- Logo -->
-        <div class="logo"><a href="index.html">
-            <h1>Teatopia</h1>
-        </a></div>
-
-        <!-- Login Icon -->
-        <div><a href="login.html" style="z-index: 1;"><i class="fa fa-user" id="login_icon"></i></a></div>
-    </div>
+    </script>
 
     <!-- Content -->
     <div class="main-content">
-        <section class="first_section">
-        <div id="demo" class="carousel slide" data-bs-ride="carousel" style="margin-bottom: 0px;">
-
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <a href="./catalog.html">
-                        <img src="./assests/tea_background_1 (2).jpg" alt="tea_bg1"
-                            class="d-block" style="width:100%">
-                        <div class="carousel-caption">
-                            <h3>Our Catalog</h3>
-                            <p>Discover the different types of tea that we offer here at Tea Leaves!</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="carousel-item">
-                    <a href="./benefits_of_tea.html">
-                        <img src="./assests/tea_background_2 (2).jpg" alt="tea_bg2" 
-                            class="d-block" style="width:100%">
-                        <div class="carousel-caption">
-                            <h3>Benefits of Tea</h3>
-                            <p>Discover the benefits that our tea may bring to your life</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="carousel-item">
-                    <a href="./location.html">
-                        <img src="./assests/tea_background_3 (2).jpg" alt="tea_bg3"
-                            class="d-block" style="width:100%">
-                        <div class="carousel-caption" style="background-color: #f3f3f3b0; color:#203522">
-                            <h3>Our Locations</h3>
-                            <p>Tea Leaves has different locations across the US. Check out our shops now!</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev" style="z-index: auto;">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next" style="z-index: auto;">
-                <span class="carousel-control-next-icon"></span>
-            </button>
-        </div>
-        </section>
-
-        <section class="about_us" style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <div
-                style="border-bottom:#416843 5px double; border-top:#416843 5px double; padding: 20px; font-weight: bold; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
-                <h1>About Our Tea Shop</h1>
-        </div>
-            <section style="margin-bottom: 20px;">
-                <h2>Our Story</h2>
-                <p>
-                    We are a cozy tea shop nestled in the heart of Somerville, Massachusetts, serving the finest and
-                    most diverse selection of teas.
-                    Our journey began in 2013 when we opened our doors to provide tea lovers with a place to explore,
-                    taste, and enjoy the world of premium teas.
-                    We are committed to delivering a remarkable tea experience.
-                </p>
-            </section>
-
-            <section style="margin-bottom: 20px;">
-                <h2>Our Mission</h2>
-                <p>
-                    At Somerville Tea Haven, our mission is to bring the world of tea to our local community.
-                    We strive to create a welcoming space where people can discover the beauty of tea.
-                    Our core values include quality, sustainability, and a passion for sharing the rich traditions of
-                    tea with our customers.
-                </p>
-            </section>
-
-            <section style="margin-bottom: 20px;">
-                <h2>Our Tea Selection</h2>
-                <p>
-                    Our tea selection includes a wide range of traditional, herbal, and exotic teas from around the
-                    world.
-                    From classic black and green teas to unique blends and single-origin selections, we have something
-                    for every tea enthusiast.
-                    Explore our tea menu and embark on a journey of flavors and aromas.
-                </p>
-            </section>
-        </section>
-
-        <section class="second_section" style="background: url(./assests/contact_us_tea_background.jpg); background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        background-position: center; padding-top: 0px;">
-            <div style="text-align: center; color: white; background-color:#3e4f3f8d; padding: 6em 0; margin-top: 100px;">
-                <h1>Quality Ingredients</h1>
-                <p style="margin: 0 20%; margin-bottom: 1em;">
-                    At Teatopia, we hand blend our quality ingredients to bring you the best flavors.
-                    Love an ingredient, but don't see it in our selection? Or would like to make a custom blend?
-                </p>
-                <button class="btn btn-outline-light" id="contact_us_button" style="margin-top: 2em;"><a href="contacts.html" style="color: white;">Contact us!</a></button>
-            </div>
-        </section>
-
-        <section class="third_section">
-            <h1 style="text-align:center; margin: 40px 0;">Most Popular Tea Leaves</h1>
-            <div class="container" style="display: flex; justify-content: space-evenly; padding-bottom: 10em;">
-                <div class="row">
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <img src="./assests/matcha_tea.jpg" class="card-img-top" alt="...">
-                            <div class="card-body" style="text-align: center">
-                                <h5 class="card-title">Matcha</h5>
-                                <p class="card-text">Delicate, producing a velvety and creamy texture</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <img src="./assests/oolong_tea.jpg" class="card-img-top" alt="...">
-                            <div class="card-body" style="text-align: center">
-                                <h5 class="card-title">Oolong</h5>
-                                <p class="card-text">Partially oxidized, resulting in a distinct and complex flavor
-                                    profile</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" style="width: 18rem; ">
-                            <img src="./assests/black_tea.jpg" class="card-img-top">
-                            <div class="card-body" style="text-align: center">
-                                <h5 class="card-title">Black</h5>
-                                <p class="card-text">Fully oxidized, resulting in a bold, robust flavor</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="text-align: center;"><a href="catalog.html" class="btn btn-primary" 
-                    style="background-color: #416843; border: none; max-width: 200px; margin: 0 auto; color: white;">Order Now</a>
-                    </div>
+        <section class="first-section">
+            <div class="image-overlay">
+                <img src="https://images.pexels.com/photos/230477/pexels-photo-230477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="tea_bg1" class="w-100">
+                <div class="landing-text">
+                    <h2 >Sip</h2>
+                    <h2 style="animation-delay: 0.75s;">Customize</h2>
+                    <h2 style="animation-delay: 1.5s;">Elevate</h2>
                 </div>
             </div>
         </section>
+
+        <section class="about-us">
+            <section class="first-section">
+                <h1>Teatopia</h1>
+                <h2>Brewing Elegance</h2>
+                <p>
+                    Welcome to Teatopia, where the art of tea is elevated to a personalized experience like no other.
+                    Our passion lies in <br> crafting bespoke blends, allowing tea enthusiasts to immerse themselves in a
+                    world of unparalleled flavor and luxury. <br> At Teatopia, we don't just sell tea; we curate an exquisite
+                    journey for your senses.
+                </p>
+            </section>
+
+            <section class="second-section">
+                <section style="background: url(./assests/contact_us_tea_background.jpg); background-repeat: no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+                background-position: center; padding-top: 0px;">
+                    <div
+                        style="text-align: center; color: white; background-color:#3e4f3f8d; padding: 6em 0;">
+                        <h1>Customization Beyond Compare</h1>
+                        <p style="margin: 0 20%; margin-bottom: 1em;">
+                            Teatopia is not just a tea shop; it's a sanctuary for those who appreciate the finer things in
+                            life. Our unique business model revolves around the customization of tea leaves, empowering you
+                            to create blends that suit your palate perfectly. Choose from our carefully curated selection of
+                            premium tea leaves and build sets that resonate with your individual taste and preferences.
+    
+    
+                        </p>
+                        <button class="btn btn-outline-light" id="contact_us_button" style="margin-top: 2em;">
+                            <a href="catalog.html">Shop Now</a>
+                        </button>
+                    </div>
+                </section>
+    
+                <section class="third-section">
+                    <h2>New to the world of tea?</h2>
+                    <p class="text">
+                        We've got you covered. Our pre-customized blends are designed
+                        to introduce you to the world of tea, allowing you to explore different flavors and discover your
+                        preferences. Choose from our selection of pre-customized blends, and embark on a journey of
+                        discovery.
+                    </p>
+                    
+                    <h1 style="font-size: 2rem;">Pre-customized Blends</h1>
+                    <div class="container" style="display: flex; justify-content: space-evenly;">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="img-container">
+                                        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/f6606269538003.612cb185a506e.jpg" class="card-img-top" alt="...">
+                                    </div>
+                                    <div class="card-body" style="text-align: center">
+                                        <h5 class="card-title">Relaxing Blend</h5>
+                                        <p class="card-text">A soothing blend of Chamomile, Peppermint, and Jasmine teas. Perfect for relaxation and calming moments.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="width: 18rem;">
+                                    <div class="img-container">
+                                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/f5cb2569538003.612cb185a57c3.jpg" class="card-img-top">
+                                </div>
+                                    <div class="card-body" style="text-align: center">
+                                        <h5 class="card-title">Spicy Chai Delight</h5>
+                                        <p class="card-text">A spicy and flavorful blend of Black Tea, Chai spices, and a touch of Peppermint. Invigorating and warming.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="width: 18rem; ">
+                                    <div class="img-container">
+                                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/aed2a969538003.612cb185a47b5.jpg" class="card-img-top">
+                                </div>
+                                    <div class="card-body" style="text-align: center">
+                                        <h5 class="card-title">Floral Harmony</h5>
+                                        <p class="card-text">A harmonious blend of Jasmine Tea and White Tea, creating a floral and delicate flavor profile.</p> <br>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div style="text-align: center;"><a href="catalog.html" class="btn btn-primary"
+                                    style="background-color: #416843; border: none; max-width: 400px; margin: 0 auto; color: white;">Shop Pre-customized Blends</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="fourth-section">
+                    <h2>Quality Ingredients</h2>
+                    <div class="container">
+                        <div class="row">
+                          <div class="col">
+                            <p style="font-family: 'Fraunces', serif;
+                            font-style: italic; font-size: 1.125rem;">
+                                At Teatopia, we hand blend our quality ingredients to bring you the best flavors. We source our
+                                ingredients from the best tea estates around the world, ensuring that every sip is a delight for
+                                your senses. Learn about the benefits of our ingredients and discover new and exciting flavors here.
+                            </p>
+                          </div>
+                          <div class="col-8">
+                            <div class="container">
+                                <div class="row">
+                                  <div class="col">
+                                    <div class="cards">
+                                        <h3>Sustainable and Ethical Sourcing</h3>
+                                        <p>We are dedicated to sustainability and ethical practices. Our commitment extends beyond providing an outstanding tea experience; it involves supporting the communities that cultivate our tea. Teatopia works closely with tea farmers who share our values, ensuring fair labor practices and environmentally friendly cultivation methods.</p>
+                                    </div>
+                                  </div>
+                                  <div class="col">
+                                    <div class="cards">
+                                    <h3>Handpicked Herbs and Botanicals</h3>
+                                    <p>For our signature blends and herbal infusions, we source handpicked herbs and botanicals known for their exceptional quality and therapeutic properties. Each ingredient is chosen for its flavor profile and contributes to the overall balance and uniqueness of our blends.</p>
+                                    </div>
+                                  </div>
+                                  <div class="w-100"></div>
+                                  <div class="col">
+                                    <div class="cards">
+                                    <h3>Artful Blending Process</h3>
+                                    <p>Crafting the perfect blend is an art, and our tea blenders are true artisans. They skillfully combine different tea leaves, herbs, and botanicals to create harmonious and distinctive flavors. The result is a symphony of tastes that reflects the dedication we have to providing an unparalleled tea experience.</p>
+                                    </div>
+                                  </div>
+                                  <div class="col">
+                                    <div class="cards">
+                                    <h3>Freshness Guaranteed</h3>
+                                    <p>Teatopia is committed to delivering freshness in every cup. Our teas are packaged to preserve their flavors and aromas, ensuring that you experience the peak of quality with every brew.</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                    
+                </section>
+                <section class="fifth-section">
+                    <h2>Community and Connection</h2>
+                    <p>
+                        Teatopia is more than a marketplace; it's a community of like-minded individuals who share a passion
+                        for tea. Engage with fellow tea enthusiasts on our discussion boards, exchange tasting notes, and
+                        discover new and exciting blends. Teatopia is not just a brand; it's a gathering place for those who
+                        seek to elevate their tea experience.
+                    </p>
+
+                    <div style="width: 30vw; height: 30vw; overflow: hidden; border-radius: 50%;">
+                        <img src="https://images.pexels.com/photos/230486/pexels-photo-230486.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                            style="width: 100%; object-fit: contain; margin-top: -15vh;" alt="">
+                    </div>
+                    <div style="text-align: center; margin-top: 5vh"><a href="signup.html" class="btn btn-primary"
+                        style="background-color: #416843; border: none; max-width: 200px; margin: 0 auto; color: white;">Join Us Now!</a>
+                    </div>
+                    
+                </section>
+            </section>
+            
+        </section>
+
     </div>
 
     <!-- Footer -->
-    <footer class="text-center text-white" style="background-color: #203522">
-        <!-- Grid container -->
-        <div class="container p-4">
-            <!--Grid row-->
-            <div class="row">
-                <!--Grid column-->
-                <div class="col-lg-4 col-md-12 mb-4 mb-md-0" style="margin: 0 auto;">
-                    <!-- Section: Form -->
-                    <section>
-                        <form>
-                            <p class="pt-2">
-                                <strong>Sign up for our "Tidbit of Teas" series </strong>
-                            </p>
-                            <div class="form-outline form-white mb-4">
-                                <input type="email" id="form5Example21" class="form-control" placeholder="Email address"/>
-                            </div>
-                            <button type="submit" class="btn btn-outline-light mb-4">
-                                Subscribe
-                            </button>
-                        </form>
-                    </section>
-                    <!-- Section: Form -->
-                </div>
-                <!--Grid column-->
-            </div>
-            <!--Grid row-->
-        </div>
-        <!-- Grid container -->
-    
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2023 Copyright:
-            <a class="text-white" href="https://mdbootstrap.com/">SeaShellsByTheSeaShore</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
-  
+    <div id="footer"></div>
+
 </body>
 
 </html>

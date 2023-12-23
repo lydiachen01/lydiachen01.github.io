@@ -16,6 +16,11 @@
         href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,100&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&display=swap"
         rel="stylesheet">
 
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous">
+    </script>
     <link rel="stylesheet" href="styles.css">
     <title>Contact Us 🍵</title>
     <style>
@@ -65,13 +70,36 @@
             color: #dd520d;
         }
 
+        .contact h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+
         .contact p {
             font-size: 14px;
             line-height: 1.5;
             font-weight: 300;
         }
 
-        .contact .submit {
+        .contact-form {
+        max-width: 300px; /* Set a maximum width for the form */
+        margin: 0 auto; /* Center the form horizontally */
+    }
+
+    .contact-form label {
+        font-size: 14px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%; /* Set the width to 100% */
+        padding: 10px; /* Adjust padding as needed */
+        margin-bottom: 10px; /* Adjust margin as needed */
+        color: #333;
+    }
+
+    .contact .submit {
             background-color: #fff;
             color: #142215c5;
             padding: 1vh 2vh;
@@ -86,55 +114,18 @@
             color: #fff;
         }
     </style>
-
-    <script>
-        $(document).ready(function () {
-            const closeIcon = document.querySelector(".closeIcon");
-            const menuIcon = document.querySelector(".menuIcon");
-            const menu = document.querySelector(".menu")
-
-            $("#hamburger_menu").click(function () {
-                if (menu.classList.contains("showMenu")) {
-                    menu.classList.remove("showMenu");
-                    closeIcon.style.display = "none";
-                    menuIcon.style.display = "block";
-                } else {
-                    menu.classList.add("showMenu");
-                    closeIcon.style.display = "block";
-                    closeIcon.style.color = "white";
-                    menuIcon.style.display = "none";
-                }
-            })
-        })
-    </script>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <div class="navbar">
-        <ul class="menu">
-            <li><a class="item" href="catalog.html">Catalog</a></li>
-            <li><a class="item" href="benefits_of_tea.html">Benefits Of Tea</a></li>
-            <li><a class="item" href="contacts.html">Contact</a></li>
-            <li><a class="item" href="location.html">Find Us</a></li>
-        </ul>
-
-        <button id="hamburger_menu">
-            <i class="menuIcon material-icons">menu</i>
-            <i class="closeIcon material-icons">close</i>
-        </button>
-
-        <!-- Logo -->
-        <div class="logo"><a href="index.html">
-                <h1>Teatopia</h1>
-            </a></div>
-
-        <!-- Login Icon -->
-        <a href="login.html"><i class="fa fa-user" id="login_icon"></i></a>
-    </div>
+    <!-- Navbar Component -->
+    <div id="header" style="z-index:100;"></div>
+    <script>
+      $(function() {
+        $("#header").load("navbar.php");
+      });
+    </script>
 
     <!-- Content -->
-
     <div class="main-content">
         <div class="bg-image-container">
             <img src="https://img.bucketlisters.com/content/uploads/blog/u9TQc_111_media_WEB%20SOCIAL%20SHARING%20%20(33).png"
@@ -157,16 +148,6 @@
                 <a href="https://twitter.com/GongChaTea">
                     <i class="fa-brands fa-twitter"></i>
                 </a>
-                <a href="https://www.yelp.com/biz/gong-cha-boston">
-                    <i class="fa-brands fa-yelp"></i>
-                </a>
-
-                <br>
-
-
-                <h3>Hours</h3>
-                <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
-                <p>Saturday - Sunday: 10:00 AM - 6:00 PM</p>
 
                 <br>
 
@@ -178,8 +159,8 @@
                     <label for="email" style="font-size: 14px">Email: &nbsp;</label><br>
                     <input type="email" id="email" name="email" style="margin-bottom: .5em;"><br>
                     <label for="message" style="font-size: 14px">Message:</label><br>
-                    <textarea id="message" name="message" rows="2" cols="30"
-                        style="padding: 20px; margin-bottom: .5em;"></textarea><br>
+                    <textarea id="message" name="message" rows="6" cols="30"
+                        style="padding: 10px; margin-bottom: .5em;"></textarea><br>
                     <input class="submit" type="submit" value="Submit">
                 </form>
             </div>

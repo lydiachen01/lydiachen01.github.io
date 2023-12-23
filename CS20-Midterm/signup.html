@@ -20,76 +20,100 @@
         href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,100&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&display=swap"
         rel="stylesheet">
 
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous">
+        </script>
+
     <link rel="stylesheet" href="styles.css">
     <title>Signup 🍵</title>
     <link rel="stylesheet" href="account.css">
+    <style>
+        /* For mobile phones and tablets: */
+        @media only screen and (max-width: 768px) {
+            #register-container {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
 
-    <script>
-        $(document).ready(function () {
-            const closeIcon = document.querySelector(".closeIcon");
-            const menuIcon = document.querySelector(".menuIcon");
-            const menu = document.querySelector(".menu")
-
-            $("#hamburger_menu").click(function () {
-                if (menu.classList.contains("showMenu")) {
-                    menu.classList.remove("showMenu");
-                    closeIcon.style.display = "none";
-                    menuIcon.style.display = "block";
-                } else {
-                    menu.classList.add("showMenu");
-                    closeIcon.style.display = "block";
-                    closeIcon.style.color = "white";
-                    menuIcon.style.display = "none";
-                }
-            })
-        })
-    </script>
+            #register {
+                padding: 0 -20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <img id="background-img" src="./assests/tea_background_4.jpg">
-    <!-- Logo -->
-    <div class="navbar">
-        <ul class="menu">
-            <li><a class="item" href="catalog.html">Catalog</a></li>
-            <li><a class="item" href="benefits_of_tea.html">Benefits Of Tea</a></li>
-            <li><a class="item" href="contacts.html">Contact</a></li>
-            <li><a class="item" href="location.html">Find Us</a></li>
-        </ul>
 
-        <button id="hamburger_menu">
-            <i class="menuIcon material-icons">menu</i>
-            <i class="closeIcon material-icons">close</i>
-        </button>
+    <!-- Navbar -->
+    <div id="header"></div>
+    <script>
+        $(function () {
+            $("#header").load("navbar.php");
+        });
+    </script>
 
-        <!-- Logo -->
-        <div class="logo"><a href="index.html">
-            <h1>Teatopia</h1>
-        </a></div>
+    <div class="container">
+        <!-- Sign-up box -->
+        <div class="image-container">
+            <img src="./assests/signup.jpeg" alt="Signup Image" style="width: 100%; height: 100vh; object-fit: cover;">
+        </div>
+
+        <div id="register-container">
+            <div class="account-box" id="register">
+                <h1 style="font-size: 25px !important; margin-bottom: 10px;">Sign Up</h1>
+                <form id="register-form" method="POST" action="create_user.php">
+                    <div class="user-box">
+                        <input type="text" name="username" id="username" placeholder="Username" required>
+                    </div>
+
+                    <div class="user-box">
+                        <input type="email" name="email" id="email" placeholder="Email" required>
+                    </div>
+
+                    <div class="user-box">
+                        <input type="password" name="password" id="password" placeholder="Password" required>
+                    </div>
+
+                    <div class="user-box">
+                        <input type="text" name="password" id="confirmPassword" placeholder="Confirm Password" required>
+                        <span class="error-message" id="error-message"></span>
+                    </div>
+
+                    <div class="selector">
+                        <a href="./login.html" class="account">Already have an account?</a>
+                        <button type="submit" class="btn">Submit</button>
+                        <span class="signup-status" id="signup-status"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
-    <div class="account-box" id="register">
-        <h1>Sign Up</h1>
-        <form id="register-form">
-            <div class="user-box">
-                <input type="text" name="email" id="email" placeholder="Email" required>
-            </div>
+    <script>
+        document.getElementById("confirmPassword").addEventListener("input", function () {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+            var errorMessage = document.getElementById('error-message');
 
-            <div class="user-box">
-                <input type="text" name="password" id="password" placeholder="Password" required>
-            </div>
+            if (password === confirmPassword) {
+                errorMessage.textContent = '';
+            } else {
+                errorMessage.textContent = 'Passwords do not match';
+            }
+        })
 
-            <div class="user-box">
-                <input type="text" name="password" id="password" placeholder="Confirm Password" required>
-            </div>
+        let status = "success";
+        const urlParams = new URLSearchParams(window.location.search);
+        status = urlParams.get("status");
 
-            <div class="selector">
-                <a href="./login.html" class="account">Already have an account?</a>
-                <button type="submit" class="btn">Submit</button>
-            </div>
-        </form>
-
-    </div>
+        if (status == "failure") {
+            document.getElementById("signup-status").textContent = "Registration failed. Please try again";
+        } else {
+            document.getElementById("signup-status").textContent = "";
+        }
+    </script>
 </body>
 
 </html>

@@ -8,24 +8,10 @@ html {
     height: 100%;
 }
 
-#background-img {
-    filter: blur(3px);
-    -webkit-filter: blur(3px);
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-}
-
 .account-box {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 75%;
     width: 400px;
     padding: 40px;
     transform: translate(-50%, -50%);
@@ -46,7 +32,7 @@ html {
 
 .account-box .user-box input {
     width: 100%;
-    padding: 10px 0;
+    padding: 15px 0;
     font-size: 16px;
     color: white;
     margin-bottom: 30px;
@@ -73,14 +59,14 @@ html {
 }
 
 .account-box .btn:hover {
-    background: #416843;
-    color: #fff;
+    background: #ffffff;
+    color: #416843;
     border-radius: 5px;
-    box-shadow: 0 0 5px #416843,
-        0 0 25px #416843,
-        0 0 50px #416843,
-        0 0 100px #416843;
-    border: none;
+    box-shadow: 0 0 5px olivedrab,
+        0 0 25px olivedrab,
+        0 0 50px olivedrab,
+        0 0 100px olivedrab;
+    /* border: none; */
 }
 
 .account {
@@ -91,6 +77,14 @@ html {
 
 .account:hover {
     text-decoration: underline;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+
 }
 
 button {
@@ -107,4 +101,22 @@ button {
 h1 {
     color: white;
     text-align: center;
+}
+
+#login-status {
+    margin-top: -25px;
+    padding: 0 0 20px 0;
+}
+
+.image-container {
+    position: absolute;
+    width: 80%;
+    margin-top: 30px;
+    left: 0;
+}
+
+.image {
+    width: 100%;
+    position: absolute;
+    left: 0;
 }

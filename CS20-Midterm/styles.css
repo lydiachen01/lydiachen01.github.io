@@ -7,6 +7,11 @@
 
 h1, h2 {
     font-family: 'Fraunces', serif;
+    font-weight: 100;
+}
+
+.hidden {
+    display: none;
 }
 
 .logo {
@@ -22,7 +27,6 @@ a {
 
 .logo h1 {
     font-size: 35px;
-    font-weight: normal;
     color: #142215c5;
 }
 
@@ -123,4 +127,225 @@ a {
         height: 45vh;
         font-size: smaller;
     }
+}
+
+/* Main page */
+
+/* Landing content */
+.main-content .first-section .image-overlay {
+    height: 100vh;
+}
+
+.main-content .first-section .image-overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main-content .first-section .image-overlay .caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+.main-content .first-section .image-overlay .landing-text {
+    color: white;
+    position: absolute;
+    top: 20%;
+    right: 3vw;
+    font-size: 15vh;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    text-align: right;
+}
+
+.main-content .first-section .image-overlay .landing-text h2 {
+    margin-bottom: 10vh;
+}
+
+.landing-text h2 {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.landing-text.fade-in h2 {
+    animation: fadeIn 1s ease-in-out; 
+    animation-fill-mode: forwards;
+}
+
+.about-us .first-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+    background-color:#3e4f3f;
+    color: white;
+}
+
+.about-us .first-section h1 {
+    font-weight: 300;
+    font-size: 4rem;
+}
+
+.about-us .first-section h2 {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 2rem;
+    padding-bottom: 2rem;
+}
+
+.about-us .first-section p {
+    font-size: 1rem;
+    text-align: center;
+    padding-bottom: 1rem;
+    margin-left: 20vh;
+    margin-right: 20vh;
+    font-weight: 300;
+}
+
+.about-us .second-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-us .second-section h1 {
+    font-weight: 400;
+    font-size: 2.5rem;
+    padding-bottom: 2rem;
+}
+
+.about-us .second-section p {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.about-us .second-section button {
+    font-weight: 500;
+}
+.about-us .second-section button:hover {
+    color: #3e4f3f;
+}
+
+.about-us .third-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+}
+
+.about-us .third-section h1 {
+    font-weight: 400;
+    font-size: 2.5rem;
+    padding-bottom: 2rem;
+}
+
+.about-us .third-section h2 {
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.5rem;
+}
+.about-us .third-section .text {
+    font-size: 1rem;
+    font-weight: 300;
+    padding-right: 20vw;
+    padding-left: 20vw;
+    padding-top: 2vh;
+    padding-bottom: 5vh;
+}
+
+.about-us .third-section .container .card {
+    border: none;
+}
+.about-us .third-section .container .row .col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-us .third-section .container .card .card-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.about-us .third-section .container .card .img-container {
+    width: 100%;
+}
+
+.about-us .third-section .container .card image {
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-us .fourth-section, .fifth-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+}
+
+.about-us .fourth-section {
+    background-color: #3e4f3f;
+    color: white;
+    width: 100%;
+}
+
+.about-us .fourth-section, .fifth-section h1 {
+    font-weight: 400;
+    font-size: 2.5rem;
+    padding-bottom: 2rem;
+}
+
+.about-us .fourth-section h2 {
+    font-weight: 400;
+    font-size: 2.5rem;
+    padding-top: 2vh;
+    padding-bottom: 6vh;
+}
+
+.about-us .fourth-section h3 {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.5rem;
+    padding-bottom: 0.75rem;
+}
+
+.about-us .fourth-section .cards {
+    padding: 6%;
+    background-color: white;
+    height: 90%;
+    color: #000;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+}
+
+.about-us .fifth-section h2 {
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+
+.about-us .fifth-section p {
+    font-size: 1rem;
+    font-weight: 300;
+    padding-right: 20vw;
+    padding-left: 20vw;
+    padding-top: 4vh;
+    padding-bottom: 5vh;
 }

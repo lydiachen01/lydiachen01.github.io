@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tea API</title>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script>
+        function getTea(teaName){
+            let ajaxRequest = new XMLHttpRequest();
+
+            ajaxRequest.open("GET", `https://boonakitea.cyclic.app/api/teas`);
+            ajaxRequest.send();
+
+            ajaxRequest.onreadystatechange = function(){
+                if (ajaxRequest.readyState == 4) {
+                    if (ajaxRequest.status == 200) {
+                        let data = JSON.parse(ajaxRequest.responseText); // JSON object
+                        console.log(data);
+                
+                        // Iterate through teas to find the one with the specified name
+                        for (let tea of data) {
+                            if (tea.name != "NA"){
+                                console.log("This is Tea:", tea);
+                                let value = tea.slug.toLowerCase();
+                                console.log("This is value:", value);
+                    
+                                if (value === "blends") {
+                                    // Iterate through the properties of the "blends" tea
+                                    for (const key in tea) {
+                                        document.getElementById('output').innerHTML += key + ': ' + tea[key] + '<br>';
+                                    }
+
+                                    console.log("This is slug:" , tea[teaName].slug);
+                                    console.log("This is name:" , tea[teaName].name);
+                                    console.log("This is caffeineLevel:" , tea[teaName].caffeineLevel);
+
+                                } else if (value.includes(teaName.toLowerCase())) {
+                                    // Print out all information for the matching tea
+                                    for (const key in tea) {
+                                        document.getElementById('output').innerHTML += key + ': ' + tea[key] + '<br>';
+                                    }
+                                    return;
+                                }
+                            }
+                        }                
+                        // If the tea with the specified name is not found
+                        document.getElementById('output').innerHTML = "Tea not found.";
+                    } else {
+                        document.getElementById('output').innerHTML = "Error fetching data. Status code: " + ajaxRequest.status;
+                    }
+                }
+            }
+        }
+        getTea("green");
+    </script>
+</body>
+</html>
