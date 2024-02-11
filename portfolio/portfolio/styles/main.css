@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Julius+Sans+One&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+nav {
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    border-bottom: 1px solid #00000052;
+    /* box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);  */
+}
+
+#logo {
+    height: 60px;
+    /* border: 1px solid; */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid */
+}
+
+nav li {
+    margin: 0 1.5rem;
+}
+
+nav li a {
+    display: inline-block;
+    text-decoration: none;
+    color: #000000;
+    border-bottom: 1px solid transparent;
+    margin: .2rem .6rem .3rem;
+    /* border: 1px solid; */
+
+}
+
+nav a:hover {
+    transform: scale(1.05);
+    border-bottom-color: black;
+}
+
+a,
+h1,
+h2,
+p {
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+footer {
+    padding: 20vh 10vw 5vh 10vw;
+}
+
+footer h2 {
+    margin-bottom: 0;
+    font-size: 2em;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+
+footer p,
+footer a {
+    font-size: 1em;
+    font-weight: 200;
+    font-family: 'Inter', sans-serif;
+}
+
+footer a img {
+    height: 30px;
+}
+
+#footer-tape {
+    margin: 0;
+    padding: 0;
+    color: rgb(220, 220, 220);
+    margin-bottom: 5vh;
+    padding: 0.2em;
+    background-color: rgb(52, 35, 35);
+}
+
+.footer-tape-text {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+span {
+    display: block;
+    padding: 25vh 10vw;
+}
+
+/* span p {
+    min-width: 500px;
+} */
+
+.first-page {
+    text-align: right;
+}
+
+.second-page {
+    display: grid;
+    margin: 0 auto;
+    max-width: 800px;
+    grid-template-rows: 1fr;
+}
+
+.section {
+    display: grid;
+    margin-bottom: 2em;
+    grid-gap: 2em;
+    grid-template-columns: 1fr 1fr;
+}
+
+.box {
+    width: 300px;
+    background-color: gray;
+}
+
+.right {
+    text-align: right;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 768px) {
+    nav li {
+        margin: 0 0.75rem;
+    }
+}

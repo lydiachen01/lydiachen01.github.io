@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="../styles/main.css">
+    <title>Lydia Chen 🍊| Homepage</title>
+    <link rel="icon" href="/assets/logo.png">
+</head>
+
+<body>
+    <nav>
+        <a href="index.html"><img id="logo" src="/assets/logo.png"></a>
+        <ul>
+            <li><a href="#projects">projects</a></li>
+            <li><a href="#in-the-works">in the works</a></li>
+            <li><a href="#about-me">about me</a></li>
+        </ul>
+    </nav>
+
+    <span class="first-page">
+        <h1>Lydia Chen</h1>
+        <p>ASPIRING FULL-STACK DEVELOPER
+            + ALL MATTERS CREATIVE & COOL</p>
+    </span>
+
+    <span class="second-page">
+        <div class="section">
+            <div class="box"></div>
+            <div class="box-info right">
+                <h2>Project Title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua.
+                    Diam in arcu cursus euismod quis viverra nibh
+                    cras pulvinar. Viverra aliquet eget sit amet tellus
+                    cras adipiscing enim eu. Arcu cursus euismod
+                    quis viverra nibh. Consequat id porta nibh
+                    venenatis cras sed felis eget velit. Nunc
+                    faucibus a pellentesque sit amet porttitor. Elit
+                    duis tristique sollicitudin nibh sit amet
+                </p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="box-info">
+                <h2>Project Title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua.
+                    Diam in arcu cursus euismod quis viverra nibh
+                    cras pulvinar. Viverra aliquet eget sit amet tellus
+                    cras adipiscing enim eu. Arcu cursus euismod
+                    quis viverra nibh. Consequat id porta nibh
+                    venenatis cras sed felis eget velit. Nunc
+                    faucibus a pellentesque sit amet porttitor. Elit
+                    duis tristique sollicitudin nibh sit amet
+                </p>
+            </div>
+            <div class="box"></div>
+        </div>
+    </span>
+
+    <footer>
+        <h2>Hello!</h2>
+        <p>Thanks for reaching the end of the page!</p>
+        <p>Want to stay in touch?
+            <br>
+            <a href="lydia.chen@tufts.edu"><i>lydia.chen@tufts.edu</i></a>
+        </p>
+        <p>Others: <br>
+            <a href="https://www.linkedin.com/in/lydia-chen-427588261/"><img src="/assets/linkedin.png"></a>
+            <a href="https://github.com/lydiachen01"><img src="/assets/github.png" style="opacity:40%"></a>
+            <a href="#"><img src="/assets/twitter.png" style="opacity:40%"></a>
+            <a href="#"><img src="/assets/medium.png" style="opacity:40%"></a>
+            <!-- <i class="fa-brands fa-linkedin-in" title="LinkedIn"></i> -->
+        </p>
+        <p>©2023 Lydia Chen <br> Fueled by Bread and Tea
+        </p>
+    </footer>
+
+    <div id="footer-tape"></div>
+
+    <!-- <div data-animate="runline"></div> -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var divText = document.createElement("div");
+            divText.className = "footer-tape-text";
+            var text = "• ART MODE • OTHER STUFF • WORK IN PROGRESS • CHAI LATTE • STICKERS • BOOKS • • ";
+            document.getElementById("footer-tape").appendChild(divText);
+            divText.innerText = text + text + text; // Duplicate the text
+
+            var position = 0;
+            // Fix the timing of this sliding bar
+            setInterval(() => {
+                let footerTapeText = document.querySelector('#footer-tape .footer-tape-text');
+                footerTapeText.style = 'margin-left:' + '-' + position + 'px';
+
+                if (position > (1347 - 500)) {
+                    position = 0;
+                } else {
+                    position++;
+                }
+            }, 10);
+        }, false);
+    </script>
+</body>
+
+</html>
